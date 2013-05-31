@@ -183,7 +183,7 @@ define(function (require, exports, module) {
      */
     function createBottomPanel(id, $panel, minSize) {
         $panel.insertBefore("#status-bar");
-        $panel.hide();
+        $panel.hide().addClass("hidden");
         updateResizeLimits();  // initialize panel's max size
         
         return new Panel($panel, minSize);
