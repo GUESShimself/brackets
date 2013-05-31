@@ -53,7 +53,7 @@ define(function (require, exports, module) {
     // Load dependent non-module scripts
     require("widgets/bootstrap-dropdown");
     require("widgets/bootstrap-modal");
-    require("widgets/bootstrap-twipsy-mod");
+    require("widgets/bootstrap-tooltip");
     require("thirdparty/path-utils/path-utils.min");
     require("thirdparty/smart-auto-complete/jquery.smart_autocomplete");
     

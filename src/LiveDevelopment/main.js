@@ -135,10 +135,10 @@ define(function main(require, exports, module) {
 
     /** Called on status change */
     function _showStatusChangeReason(reason) {
-        // Destroy the previous twipsy (options are not updated otherwise)    
-        _$btnGoLive.twipsy("hide").removeData("twipsy");
+        // Destroy the previous tooltip (options are not updated otherwise)    
+        _$btnGoLive.tooltip("hide").removeData("tooltip");
         
-        // If there was no reason or the action was an explicit request by the user, don't show a twipsy
+        // If there was no reason or the action was an explicit request by the user, don't show a tooltip
         if (!reason || reason === "explicit_close") {
             return;
         }
@@ -149,18 +149,20 @@ define(function main(require, exports, module) {
             translatedReason = StringUtils.format(Strings.LIVE_DEV_CLOSED_UNKNOWN_REASON, reason);
         }
         
-        // Configure the twipsy
+        // Configure the tooltip
         var options = {
             placement: "left",
             trigger: "manual",
-            autoHideDelay: 5000,
+            delay: {
+                hide: 5000
+            },
             title: function () {
                 return translatedReason;
             }
         };
 
-        // Show the twipsy with the explanation
-        _$btnGoLive.twipsy(options).twipsy("show");
+        // Show the tooltip with the explanation
+        _$btnGoLive.tooltip(options).tooltip("show");
     }
     
     /** Create the menu item "Go Live" */
